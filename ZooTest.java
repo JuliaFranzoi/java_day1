@@ -23,4 +23,11 @@ public class ZooTest{
    assertEquals(0, zoo.animalCount());
  }
 
+ @Test
+ public void canEncage(){
+  zoo.encage(animal);;
+  assertEquals(1,zoo.animalCount());
+ }
+
+
 }  
