@@ -1,17 +1,13 @@
 public class Zoo{
-  private String name;
+  
   private Animal[] cage;
 
 
-  public Zoo(String name){
-    this.name = name;
+  public Zoo(){
     this.cage = new Animal[10];
-
   }
   
-  public String getName(){
-    return this.name;
-  }
+  
 
   public void encage(Animal eg){
    if (isCageFull()) return;
