@@ -1,38 +1,32 @@
+import java.util.*;
+
 public class Zoo{
   
-  private Animal[] cage;
+  private ArrayList<Animal> cage;
 
 
   public Zoo(){
-    this.cage = new Animal[10];
+    this.cage = new ArrayList<Animal>();
   }
   
-  
 
-  public void encage(Animal eg){
-   if (isCageFull()) return;
-
-    int nextIndex = animalCount();
-    cage[nextIndex] = eg;
+  public void encage(Animal guest){
+    cage.add(guest);
   }
+
 
   public int animalCount(){
-    int count = 0;
-    for (Animal animal : cage){
-      if (animal != null) {
-        count += 1;
-      }
-    }
-    return count; 
+    return cage.size();
   }
-  public boolean isCageFull(){
-    return animalCount() == cage.length;
+
+  public Animal free(){
+    if(animalCount > 0){
+      return cage.remove(0)
+    }
   }
 
   public void empty() {
-    for(int i=0; i< cage.length; i++) {
-      cage[i] = null;
-    }
+    cage.clear();
   }
 }
 
